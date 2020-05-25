@@ -1,11 +1,10 @@
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
-using IoT.UI.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Entities.Context;
 
 namespace IoT.UI
 {
@@ -20,11 +19,8 @@ namespace IoT.UI
 
 		public void ConfigureServices(IServiceCollection services)
 		{
-			services.AddDbContext<ApplicationDbContext>(options =>
-				options.UseSqlServer(
-					Configuration.GetConnectionString("DefaultConnection")));
-			services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-				.AddEntityFrameworkStores<ApplicationDbContext>();
+			//services.AddDbContext<AppContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+			//services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<AppContext>();
 			services.AddControllersWithViews();
 			services.AddRazorPages();
 		}
@@ -41,12 +37,13 @@ namespace IoT.UI
 				app.UseExceptionHandler("/Home/Error");
 				app.UseHsts();
 			}
+
 			app.UseHttpsRedirection();
 			app.UseStaticFiles();
 
 			app.UseRouting();
 
-			app.UseAuthentication();
+			//app.UseAuthentication();
 			app.UseAuthorization();
 
 			app.UseEndpoints(endpoints =>

@@ -3,15 +3,24 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.API", "IoT\IoT.API.csproj", "{0B596FDA-5A35-49FF-8353-FB6FD139FC44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.API", "IoT\IoT.API.csproj", "{0B596FDA-5A35-49FF-8353-FB6FD139FC44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.UI", "IoT.UI\IoT.UI.csproj", "{9EE9B53E-39E0-4498-BA0D-E22FAB06C73D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.UI", "IoT.UI\IoT.UI.csproj", "{9EE9B53E-39E0-4498-BA0D-E22FAB06C73D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{04711EC1-0DE4-4FCF-BE43-BC5F0A09DA67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{04711EC1-0DE4-4FCF-BE43-BC5F0A09DA67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{C88755C1-AC95-4B86-81DB-C306AD9D7E5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{C88755C1-AC95-4B86-81DB-C306AD9D7E5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{25DCCFD1-A8CF-43C0-876C-6E1B2207D9D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{25DCCFD1-A8CF-43C0-876C-6E1B2207D9D0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{FE33EF47-EF1B-4DB6-9A85-E2C9D6842D42}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL", "SQL", "{0C5BEE88-6D89-415C-B29B-555C455760C7}"
+	ProjectSection(SolutionItems) = preProject
+		MagDevDbo.sql = MagDevDbo.sql
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{D1862537-E468-4818-B4D4-C1E57732CFED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,9 +48,16 @@ Global
 		{25DCCFD1-A8CF-43C0-876C-6E1B2207D9D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{25DCCFD1-A8CF-43C0-876C-6E1B2207D9D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{25DCCFD1-A8CF-43C0-876C-6E1B2207D9D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1862537-E468-4818-B4D4-C1E57732CFED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1862537-E468-4818-B4D4-C1E57732CFED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1862537-E468-4818-B4D4-C1E57732CFED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1862537-E468-4818-B4D4-C1E57732CFED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0C5BEE88-6D89-415C-B29B-555C455760C7} = {FE33EF47-EF1B-4DB6-9A85-E2C9D6842D42}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C22AC108-6DC9-4F79-B729-7FB8587A1D95}
