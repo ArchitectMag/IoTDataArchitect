@@ -1,10 +1,11 @@
+using IOT.Business.IOCInversion;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace IoT
+namespace IoT.API
 {
 	public class Startup
 	{
@@ -17,6 +18,7 @@ namespace IoT
 
 		public void ConfigureServices(IServiceCollection services)
 		{
+			services.AddSingleton(new ScopeManager(services));
 			services.AddControllers();
 		}
 
@@ -28,10 +30,8 @@ namespace IoT
 			}
 
 			app.UseHttpsRedirection();
-
 			app.UseRouting();
 
-			//app.UseAuthorization();
 
 			app.UseEndpoints(endpoints =>
 			{

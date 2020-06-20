@@ -5,7 +5,7 @@ using Entities.Models;
 
 namespace DataAccess.Data
 {
-    public class LightDal : EntityFrameworkBase<Light, AppDbContext>, ILightDal
+    public class LightDal : EntityRepositoryBase<Light, AppDbContext>, ILightDal
     {
        
     }
