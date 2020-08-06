@@ -1,7 +1,7 @@
 ﻿using Core.Utilities.Result;
 using Microsoft.AspNetCore.Mvc;
 
-namespace IoT.API.Controllers
+namespace IoT.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

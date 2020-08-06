@@ -123,7 +123,22 @@
   <data name="DeletedSucced" xml:space="preserve">
     <value>Kayıt başarıyla silindi.</value>
   </data>
+  <data name="ExistUser" xml:space="preserve">
+    <value>Bu mail adresi ile kayıt mevcut değil.</value>
+  </data>
+  <data name="PasswordError" xml:space="preserve">
+    <value>Hatalı şifre girdiniz.</value>
+  </data>
+  <data name="SuccessfullyRegistered" xml:space="preserve">
+    <value>Kayıt başarılı.</value>
+  </data>
+  <data name="TokenCreat" xml:space="preserve">
+    <value>Token oluşturuldu.</value>
+  </data>
   <data name="UpdatedSucced" xml:space="preserve">
     <value>Kayıt başarıyla güncellendi.</value>
+  </data>
+  <data name="UserAlreadyRegister" xml:space="preserve">
+    <value>Kullanıcı zaten kayıtlı.</value>
   </data>
 </root>

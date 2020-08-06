@@ -1,13 +1,12 @@
 ﻿using Business.Interfaces;
 using Entities.Models;
-using IoT.API.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.VisualBasic;
 using System;
 using System.Threading.Tasks;
 
-namespace IoT.API.Controllers
+namespace IoT.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

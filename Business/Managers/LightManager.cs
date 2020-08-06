@@ -6,6 +6,8 @@ using DataAccess.Interfaces;
 using System.Threading.Tasks;
 using Core.Utilities.Messages;
 using System.Collections.Generic;
+using Business.VaidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 
 namespace Business.Managers
 {
@@ -20,6 +22,7 @@ namespace Business.Managers
             _message = message;
         }
 
+        [ValidationAspect(typeof(LightValidation),Priority = 1)]
         public async Task<IResult> AddLight(Light light)
         {
             await _lightDal.Add(light);

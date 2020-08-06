@@ -123,7 +123,22 @@
   <data name="DeletedSucced" xml:space="preserve">
     <value>Deletion is successful.</value>
   </data>
+  <data name="ExistUser" xml:space="preserve">
+    <value>This mail not register.</value>
+  </data>
+  <data name="PasswordError" xml:space="preserve">
+    <value>Password is wrong.</value>
+  </data>
+  <data name="SuccessfullyRegistered" xml:space="preserve">
+    <value>Successfully registered.</value>
+  </data>
+  <data name="TokenCreat" xml:space="preserve">
+    <value>Token is creat.</value>
+  </data>
   <data name="UpdatedSucced" xml:space="preserve">
     <value>Updating is successful.</value>
+  </data>
+  <data name="UserAlreadyRegister" xml:space="preserve">
+    <value>User already registered.</value>
   </data>
 </root>

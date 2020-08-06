@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using IoT.UI.Models;
 using Microsoft.Extensions.Localization;
-using Core.Utilities.Localization;
 
 namespace IoT.UI.Controllers
 {
