@@ -1,10 +1,11 @@
-﻿using Business.Interfaces;
+﻿using System;
 using Entities.Models;
+using Business.Interfaces;
+using Microsoft.VisualBasic;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Microsoft.VisualBasic;
-using System;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace IoT.Api.Controllers
 {
@@ -33,6 +34,7 @@ namespace IoT.Api.Controllers
             return ReturnApiDataResult(await _lightService.GetLightListByTime(date));
         }
 
+        [Authorize]
         [HttpGet("getlightlist")]
         public async Task<IActionResult> GetLightList()
         {

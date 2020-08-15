@@ -126,6 +126,9 @@
   <data name="ExistUser" xml:space="preserve">
     <value>Bu mail adresi ile kayıt mevcut değil.</value>
   </data>
+  <data name="Fuck" xml:space="preserve">
+    <value>MGBB</value>
+  </data>
   <data name="PasswordError" xml:space="preserve">
     <value>Hatalı şifre girdiniz.</value>
   </data>

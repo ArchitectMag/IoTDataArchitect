@@ -5,6 +5,7 @@
         public DataResult(T data, bool success, string message) : base(success, message)
         {
             Data = data;
+            Message = message;
         }
 
         public DataResult(T data, bool success) : base(success)

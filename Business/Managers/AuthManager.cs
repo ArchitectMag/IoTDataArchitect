@@ -1,14 +1,14 @@
 ﻿using System;
 using Business.Interfaces;
-using Core.Utilities.Messages;
 using Core.Utilities.Result;
 using Core.Utilities.Security.Hashing;
 using Core.Utilities.Security.JWT;
 using Core.Utilities.Security.UserEntity;
 using Entities.ViewModels;
-using Microsoft.AspNetCore.Identity;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Core.Utilities.Localization;
+using Microsoft.Extensions.Localization;
 
 namespace Business.Managers
 {
@@ -16,13 +16,13 @@ namespace Business.Managers
     {
         private IUserService _userService;
         private ITokenHelper _tokenHelper;
-        private IMessage _message;
+        private ILocalizationHelper _sharedLocalizer;
 
-        public AuthManager(IUserService userService, ITokenHelper tokenHelper, IMessage message)
+        public AuthManager(IUserService userService, ITokenHelper tokenHelper, ILocalizationHelper sharedLocalizer)
         {
             _userService = userService;
             _tokenHelper = tokenHelper;
-            _message = message;
+            _sharedLocalizer = sharedLocalizer;
         }
 
         public async Task<IDataResult<AccessToken>> CreateAccessToken(User user)
@@ -30,7 +30,7 @@ namespace Business.Managers
             IDataResult<List<Role>> roles = await _userService.GetRoles(user);
             var accessToken = await _tokenHelper.CreateToken(user, roles.Data);
             await SaveRefreshToken(user, await _tokenHelper.CreateRefreshToken());
-            return new SuccessDataResult<AccessToken>(accessToken, _message.GetMessage("TokenCreat"));
+            return new SuccessDataResult<AccessToken>(accessToken, _sharedLocalizer.GetString("TokenCreat"));
         }
 
         public async Task<IDataResult<User>> Login(UserLogin userLogin)
@@ -38,12 +38,12 @@ namespace Business.Managers
             var existUser = await _userService.GetUserByMail(userLogin.Email);
             if (existUser == null)
             {
-                return new ErrorDataResult<User>(_message.GetMessage("ExistUser"));
+                return new ErrorDataResult<User>(_sharedLocalizer.GetString("ExistUser"));
             }
 
             if (!HashingHelper.VerifyPasswordHash(userLogin.Password, existUser.Data.PasswordHash, existUser.Data.PasswordSalt))
             {
-                return new ErrorDataResult<User>(_message.GetMessage("PasswordError"));
+                return new ErrorDataResult<User>(_sharedLocalizer.GetString("PasswordError"));
             }
 
             await SaveRefreshToken(existUser.Data, await _tokenHelper.CreateRefreshToken());
@@ -79,7 +79,7 @@ namespace Business.Managers
                 Status = true
             };
             await _userService.AddUser(user);
-            return new SuccessDataResult<User>(user, _message.GetMessage("SuccessfullyRegistered"));
+            return new SuccessDataResult<User>(user, _sharedLocalizer.GetString("SuccessfullyRegistered"));
         }
 
 
@@ -91,16 +91,16 @@ namespace Business.Managers
                 user.RefreshToken = refreshToken;
                 user.RefreshTokenEndDate = DateTime.UtcNow.AddMonths(1);
                 await _userService.UpdateUser(user);
-                return new SuccessResult(_message.GetMessage("SuccessSaveRefreshToken"));
+                return new SuccessResult(_sharedLocalizer.GetString("SuccessSaveRefreshToken"));
             }
-            return new ErrorResult(_message.GetMessage("NotSuccessSaveRefreshToken"));
+            return new ErrorResult(_sharedLocalizer.GetString("NotSuccessSaveRefreshToken"));
         }
 
         public async Task<IResult> UserExists(string mail)
         {
             if (await _userService.GetUserByMail(mail) != null)
             {
-                return new ErrorResult(_message.GetMessage("UserAlreadyRegister"));
+                return new ErrorResult(_sharedLocalizer.GetString("UserAlreadyRegister"));
             }
             return new SuccessResult();
         }

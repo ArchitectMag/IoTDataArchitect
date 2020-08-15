@@ -1,36 +1,37 @@
 ﻿using System;
 using Business.Interfaces;
-using Core.Utilities.Messages;
 using Core.Utilities.Result;
 using Core.Utilities.Security.UserEntity;
 using DataAccess.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Core.Utilities.Localization;
+using Microsoft.Extensions.Localization;
 
 namespace Business.Managers
 {
     public class UserManager : IUserService
     {
         private IUserDal _userDal;
-        private IMessage _message;
+        private ILocalizationHelper _sharedLocalizer;
 
-        public UserManager(IUserDal userDal, IMessage message)
+        public UserManager(IUserDal userDal, ILocalizationHelper sharedLocalizer)
         {
             _userDal = userDal;
-            _message = message;
+            _sharedLocalizer = sharedLocalizer;
         }
 
         public async Task<IResult> AddUser(User user)
         {
             await _userDal.Add(user);
-            return new SuccessResult(_message.GetMessage("AddedSucced"));
+            return new SuccessResult(_sharedLocalizer.GetString("AddedSucced"));
         }
 
         public async Task<IResult> DeleteUser(int id)
         {
             User model = await _userDal.Get(u => u.Id == id);
             await _userDal.Delete(model);
-            return new SuccessResult(_message.GetMessage("DeletedSucced"));
+            return new SuccessResult(_sharedLocalizer.GetString("DeletedSucced"));
         }
 
         public async Task<IDataResult<List<Role>>> GetRoles(User user)
@@ -56,7 +57,7 @@ namespace Business.Managers
         public async Task<IResult> UpdateUser(User user)
         {
             await _userDal.Update(user);
-            return new SuccessResult(_message.GetMessage("UpdatedSucced"));
+            return new SuccessResult(_sharedLocalizer.GetString("UpdatedSucced"));
         }
     }
 }

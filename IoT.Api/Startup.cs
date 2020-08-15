@@ -1,7 +1,6 @@
 using System;
 using Core.Utilities.Security.Encryption;
 using Core.Utilities.Security.JWT;
-using IOT.Business.IOCInversion;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -25,7 +24,6 @@ namespace IoT.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton(new ScopeManager(services));
             services.AddControllers();
             services.AddRazorPages();
 

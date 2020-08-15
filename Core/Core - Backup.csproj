@@ -19,10 +19,10 @@
     <EmbeddedResource Update="SystemMessages.tr-TR.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="SystemResources\SharedResource.tr-TR.resx">
-      <SubType>Designer</SubType>
-      <Generator>PublicResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="SystemResources\" />
   </ItemGroup>
 
 </Project>

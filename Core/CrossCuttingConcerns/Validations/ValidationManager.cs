@@ -7,7 +7,7 @@ namespace Core.CrossCuttingConcerns.Validations
     {
         public static async Task Validation(IValidator validator, object entity)
         {
-            var result = await validator.ValidateAsync(entity);
+            var result = await validator.ValidateAsync((IValidationContext)entity);
             if (!result.IsValid)
             {
                 throw new ValidationException(result.Errors);

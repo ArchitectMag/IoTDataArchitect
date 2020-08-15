@@ -1,11 +1,23 @@
 ﻿
-@*@inject IViewLocalizer Localizer*@
-@*@inject IHtmlLocalizer<SharedResource> SharedLocalizer*@
+
+@model Core.Utilities.Result.IDataResult<List<Entities.Models.Light>>
 @{
+
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">@ViewData["Hello"]</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>@ViewData["hello"].ToString()</p>
+    <p>@Localizer["MainPage"].Value</p>
+    <p>Mesaj: @Model.Message</p>
+
+    @{
+        foreach (var item in Model.Data)
+        {
+            <p>@item.LightSensorValue</p>
+        }
+    }
+
 </div>
+
+
