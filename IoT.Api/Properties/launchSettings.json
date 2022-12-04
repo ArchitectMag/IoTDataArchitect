@@ -21,16 +21,16 @@
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "home",
+      "applicationUrl": "http://localhost:5490",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "applicationUrl": "http://localhost:5490"
+      }
     },
     "Docker": {
       "commandName": "Docker",
       "launchBrowser": true,
       "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/api/home",
-      "publishAllPorts": true
+      "environmentVariables": {}
     }
   }
 }

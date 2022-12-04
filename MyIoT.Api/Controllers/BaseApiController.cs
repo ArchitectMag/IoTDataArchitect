@@ -1,36 +1,38 @@
-﻿using Core.Utilities.Result;
+﻿//System
 using Microsoft.AspNetCore.Mvc;
 
-namespace IoT.Api.Controllers
+//Projects
+using Utilities = MyIoT.Core.Utilities.Result;
+
+namespace MyIoT.Api.Controllers;
+
+[Route("api/[controller]")]
+[ApiController]
+public class BaseApiController : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class BaseApiController : ControllerBase
+    public IActionResult ReturnApiResult(Utilities.IResult result)
     {
-        public IActionResult ReturnApiResult(IResult result)
+        if (result.Success)
         {
-            if (result.Success)
-            {
-                return Ok(result.Message);
-            }
-            else
-            {
-                return BadRequest(result.Message);
-            }
-
+            return Ok(result.Message);
+        }
+        else
+        {
+            return BadRequest(result.Message);
         }
 
-        public IActionResult ReturnApiDataResult<T>(IDataResult<T> result)
-        {
-            if (result.Success)
-            {
-                return Ok(result.Data);
-            }
-            else
-            {
-                return BadRequest(result.Message);
-            }
+    }
 
+    public IActionResult ReturnApiDataResult<T>(Utilities.IDataResult<T> result)
+    {
+        if (result.Success)
+        {
+            return Ok(result.Data);
         }
+        else
+        {
+            return BadRequest(result.Message);
+        }
+
     }
 }

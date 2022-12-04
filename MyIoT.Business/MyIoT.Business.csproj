@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="DependencyResolvers\" />
+    <None Remove="Interfaces\" />
+    <None Remove="Managers\" />
+    <None Remove="VaidationRules\" />
+    <None Remove="Autofac" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DependencyResolvers\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Managers\" />
+    <Folder Include="VaidationRules\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyIoT.Entities\MyIoT.Entities.csproj" />
+    <ProjectReference Include="..\MyIoT.Core\MyIoT.Core.csproj" />
+    <ProjectReference Include="..\MyIoT.DataAccess\MyIoT.DataAccess.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.5.0" />
+  </ItemGroup>
+</Project>

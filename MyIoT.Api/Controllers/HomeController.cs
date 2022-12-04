@@ -1,13 +1,13 @@
-﻿using System.Threading.Tasks;
+﻿//System
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace IoT.Api.Controllers
+namespace MyIoT.Api.Controllers;
+
+public class HomeController : Controller
 {
-    public class HomeController : Controller
+    public IActionResult Index()
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
+        return View();
     }
 }

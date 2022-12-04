@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  myiot.api:
+    image: ${DOCKER_REGISTRY-}myiot
+    build:
+      context: .
+      dockerfile: MyIoT.Api/Dockerfile

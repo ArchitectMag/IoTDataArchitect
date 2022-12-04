@@ -1,73 +1,75 @@
-﻿using System.Threading.Tasks;
-using Business.Interfaces;
-using Core.Utilities.Security.JWT;
-using Entities.ViewModels;
-using Microsoft.AspNetCore.Authorization;
+﻿//System
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
-namespace IoT.Api.Controllers
+//Projects
+using MyIoT.Business.Interfaces;
+using MyIoT.Entities.ViewModels;
+using MyIoT.Core.Utilities.Security.JWT;
+
+namespace MyIoT.Api.Controllers;
+
+[Route("api/[controller]")]
+[ApiController]
+public class AuthController : BaseApiController
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class AuthController : BaseApiController
+    private IAuthService _authService;
+
+    public AuthController(IAuthService authService)
     {
-        private IAuthService _authService;
+        _authService = authService;
+    }
 
-        public AuthController(IAuthService authService)
+    [AllowAnonymous]
+    [HttpPost("login")]
+    public async Task<IActionResult> Login(UserLogin userLogin)
+    {
+        var login = await _authService.Login(userLogin);
+        if (!login.Success)
         {
-            _authService = authService;
+            return BadRequest(login.Message);
         }
 
-        [AllowAnonymous]
-        [HttpPost("login")]
-        public async Task<IActionResult> Login(UserLogin userLogin)
+        var result = await _authService.CreateAccessToken(login.Data);
+        if (result.Success)
         {
-            var login = await _authService.Login(userLogin);
-            if (!login.Success)
-            {
-                return BadRequest(login.Message);
-            }
-
-            var result = await _authService.CreateAccessToken(login.Data);
-            if (result.Success)
-            {
-                return Ok(result.Data);
-            }
-
-            return BadRequest(result.Message);
+            return Ok(result.Data);
         }
 
-        [AllowAnonymous]
-        [HttpPost("register")]
-        public async Task<IActionResult> Register(UserRegister userRegister)
+        return BadRequest(result.Message);
+    }
+
+    [AllowAnonymous]
+    [HttpPost("register")]
+    public async Task<IActionResult> Register(UserRegister userRegister)
+    {
+        var userExist = await _authService.UserExists(userRegister.Email);
+        if (!userExist.Success)
         {
-            var userExist = await _authService.UserExists(userRegister.Email);
-            if (!userExist.Success)
-            {
-                return BadRequest(userExist.Message);
-            }
-
-            var register = await _authService.Register(userRegister);
-            var result = await _authService.CreateAccessToken(register.Data);
-            if (result.Success)
-            {
-                return Ok(result.Data);
-            }
-
-            return BadRequest(result.Message);
+            return BadRequest(userExist.Message);
         }
 
-        [AllowAnonymous]
-        [HttpPost("refreshtokenlogin")]
-        public async Task<IActionResult> RefreshTokenLogin(AccessToken token)
+        var register = await _authService.Register(userRegister);
+        var result = await _authService.CreateAccessToken(register.Data);
+        if (result.Success)
         {
-            var result = await _authService.RefreshTokenLogin(token.RefreshToken);
-            if (result.Success)
-            {
-                return Ok(result.Data);
-            }
-
-            return BadRequest(result.Message);
+            return Ok(result.Data);
         }
+
+        return BadRequest(result.Message);
+    }
+
+    [AllowAnonymous]
+    [HttpPost("refreshtokenlogin")]
+    public async Task<IActionResult> RefreshTokenLogin(AccessToken token)
+    {
+        var result = await _authService.RefreshTokenLogin(token.RefreshToken);
+        if (result.Success)
+        {
+            return Ok(result.Data);
+        }
+
+        return BadRequest(result.Message);
     }
 }
