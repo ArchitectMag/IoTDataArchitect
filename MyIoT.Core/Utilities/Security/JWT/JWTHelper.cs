@@ -26,11 +26,11 @@ public class JWTHelper : ITokenHelper
     {
         _configuration = configuration;
         _tokenOptions = _configuration.GetSection("TokenOptions").Get<TokenOptions>();
-        _accesTokenExpiration = DateTime.Now.AddMinutes(_tokenOptions.TokenExpire);
     }
 
     public async Task<AccessToken> CreateToken(User user, List<Role> roles)
     {
+        _accesTokenExpiration = DateTime.Now.AddMinutes(_tokenOptions.TokenExpire);
         var securityKey = SecurityKeyHelper.CreateSecurityKey(_tokenOptions.SecurityKey);
         var signingCredentials = SigningCredentialsHelper.CreateSigningCredentials(securityKey);
         var jwt = CreateJwtSecurityToken(_tokenOptions, user, signingCredentials, roles);

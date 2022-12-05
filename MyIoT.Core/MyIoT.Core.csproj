@@ -19,6 +19,16 @@
     <None Remove="Microsoft.AspNetCore.Authentication.JwtBearer" />
     <None Remove="Microsoft.EntityFrameworkCore" />
     <None Remove="Utilities\Security\Hashing\" />
+    <None Remove="Aspects\Autofac\Transaction\" />
+    <None Remove="Utilities\IoC\" />
+    <None Remove="DependencyResolvers\" />
+    <None Remove="CrossCuttingConcerns\Caching\" />
+    <None Remove="Aspects\Autofac\Caching\" />
+    <None Remove="CrossCuttingConcerns\Logging\" />
+    <None Remove="CrossCuttingConcerns\Logging\Log4Net\" />
+    <None Remove="CrossCuttingConcerns\Logging\Log4Net\Layouts\" />
+    <None Remove="CrossCuttingConcerns\Logging\Log4Net\Layouts\JsonLayout\" />
+    <None Remove="log4net" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Aspects\" />
@@ -28,6 +38,15 @@
     <Folder Include="SystemResources\" />
     <Folder Include="Utilities\" />
     <Folder Include="Utilities\Security\Hashing\" />
+    <Folder Include="Aspects\Autofac\Transaction\" />
+    <Folder Include="Utilities\IoC\" />
+    <Folder Include="DependencyResolvers\" />
+    <Folder Include="CrossCuttingConcerns\Caching\" />
+    <Folder Include="Aspects\Autofac\Caching\" />
+    <Folder Include="CrossCuttingConcerns\Logging\" />
+    <Folder Include="CrossCuttingConcerns\Logging\Log4Net\" />
+    <Folder Include="CrossCuttingConcerns\Logging\Log4Net\Layouts\" />
+    <Folder Include="CrossCuttingConcerns\Logging\Log4Net\Layouts\JsonLayout\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Condition=" '$(EnableDefaultEmbeddedResourceItems)' == 'true' " Update="SystemResources\SharedResource.tr-TR.resx">
@@ -47,5 +66,6 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.11" />
+    <PackageReference Include="log4net" Version="2.0.15" />
   </ItemGroup>
 </Project>

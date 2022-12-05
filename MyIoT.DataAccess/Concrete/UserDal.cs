@@ -9,7 +9,7 @@ using MyIoT.DataAccess.Interfaces;
 using MyIoT.Core.DataAccess.EntityFramework;
 using MyIoT.Core.Utilities.Security.UserEntity;
 
-namespace MyIoT.DataAccess.Data;
+namespace MyIoT.DataAccess.Concrete;
 
 public class UserDal : EntityRepositoryBase<User, AppDbContext>, IUserDal
 {

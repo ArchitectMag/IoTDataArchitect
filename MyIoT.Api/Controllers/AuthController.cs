@@ -12,7 +12,7 @@ namespace MyIoT.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class AuthController : BaseApiController
+public class AuthController : ControllerBase
 {
     private IAuthService _authService;
 

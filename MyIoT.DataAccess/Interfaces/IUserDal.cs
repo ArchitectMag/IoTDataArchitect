@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using MyIoT.Core.DataAccess.EntityFramework;
 using MyIoT.Core.Utilities.Security.UserEntity;
 
-
 namespace MyIoT.DataAccess.Interfaces;
 
 public interface IUserDal : IEntityRepository<User>

@@ -12,6 +12,7 @@
     <None Remove="Managers\" />
     <None Remove="VaidationRules\" />
     <None Remove="Autofac" />
+    <None Remove="Autofac.Extras.DynamicProxy" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DependencyResolvers\" />
@@ -26,5 +27,6 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Autofac" Version="6.5.0" />
+    <PackageReference Include="Autofac.Extras.DynamicProxy" Version="6.0.1" />
   </ItemGroup>
 </Project>

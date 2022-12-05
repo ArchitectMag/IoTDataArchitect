@@ -14,7 +14,7 @@ public interface ILightService
     Task<IDataResult<Light>> GetLight(int id);
     Task<IDataResult<List<Light>>> GetLightList();
     Task<IDataResult<List<Light>>> GetLightListByTime(DateTime date);
-    Task<IResult> AddLight(Light light);
+    Task<IResult> AddLight(int lightSensorValue);
     Task<IResult> UpdateLight(Light light);
     Task<IResult> DeleteLight(int id);
 }
