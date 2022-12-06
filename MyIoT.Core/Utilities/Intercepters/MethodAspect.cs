@@ -8,7 +8,7 @@ public abstract class MethodAspect : MethodAspectBase
     public override void Intercept(IInvocation invocation)
     {
         var isSuccess = true;
-        OnBeforeAsync(invocation);
+        OnBefore(invocation);
         try
         {
             invocation.Proceed();
@@ -29,7 +29,7 @@ public abstract class MethodAspect : MethodAspectBase
         OnAfter(invocation);
     }
 
-    protected virtual void OnBeforeAsync(IInvocation invocation)
+    protected virtual void OnBefore(IInvocation invocation)
     {
     }
 
