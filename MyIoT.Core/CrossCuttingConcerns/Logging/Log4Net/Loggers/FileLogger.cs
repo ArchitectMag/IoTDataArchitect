@@ -1,5 +1,4 @@
-﻿using System;
-namespace MyIoT.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
+﻿namespace MyIoT.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
 
 public class FileLogger : LoggerServiceBase
 {

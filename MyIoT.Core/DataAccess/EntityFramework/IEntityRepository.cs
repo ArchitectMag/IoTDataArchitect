@@ -1,8 +1,5 @@
 ﻿//System
-using System;
-using System.Threading.Tasks;
 using System.Linq.Expressions;
-using System.Collections.Generic;
 
 namespace MyIoT.Core.DataAccess.EntityFramework;
 

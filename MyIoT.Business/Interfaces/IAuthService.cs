@@ -1,7 +1,4 @@
-﻿//System
-using System.Threading.Tasks;
-
-//Projects
+﻿//Projects
 using MyIoT.Entities.ViewModels;
 using MyIoT.Core.Utilities.Result;
 using MyIoT.Core.Utilities.Security.JWT;

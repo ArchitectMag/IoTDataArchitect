@@ -1,7 +1,6 @@
 ﻿//System
 using Autofac;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.Extensions.Configuration;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 
@@ -60,6 +59,7 @@ if (app.Environment.IsDevelopment())
 app.UseCors(builder => builder.WithOrigins("http://localhost:7250").AllowAnyHeader());
 app.UseHttpsRedirection();
 app.UseAuthorization();
+app.UseAuthentication();
 app.MapControllers();
 app.Run();
 

@@ -1,5 +1,4 @@
 ﻿//System
-using System;
 using log4net.Core;
 
 namespace MyIoT.Core.CrossCuttingConcerns.Logging.Log4Net;

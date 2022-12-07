@@ -1,5 +1,4 @@
 ﻿//System
-using System;
 using Castle.DynamicProxy;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;

@@ -1,9 +1,6 @@
 ﻿//System
-using System;
-using System.Linq;
 using FluentValidation;
 using Castle.DynamicProxy;
-using System.Threading.Tasks;
 
 //Projects
 using MyIoT.Core.Utilities.Intercepters;

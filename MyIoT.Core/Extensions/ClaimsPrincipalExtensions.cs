@@ -1,5 +1,4 @@
 ﻿//System
-using System;
 using System.Security.Claims;
 
 namespace MyIoT.Core.Extensions;

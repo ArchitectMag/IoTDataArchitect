@@ -1,9 +1,5 @@
 ﻿//System
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Linq.Expressions;
-using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
 namespace MyIoT.Core.DataAccess.EntityFramework;

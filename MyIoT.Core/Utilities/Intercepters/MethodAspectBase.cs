@@ -1,5 +1,4 @@
 ﻿//System
-using System;
 using Castle.DynamicProxy;
 
 namespace MyIoT.Core.Utilities.Intercepters;

@@ -1,7 +1,4 @@
-﻿//System
-using System;
-
-namespace MyIoT.Core.CrossCuttingConcerns.Caching;
+﻿namespace MyIoT.Core.CrossCuttingConcerns.Caching;
 
 public interface ICacheManager
 {

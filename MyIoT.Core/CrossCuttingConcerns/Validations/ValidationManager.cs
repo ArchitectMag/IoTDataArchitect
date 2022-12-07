@@ -1,6 +1,5 @@
 ﻿//System
 using FluentValidation;
-using System.Threading.Tasks;
 
 namespace MyIoT.Core.CrossCuttingConcerns.Validations;
 

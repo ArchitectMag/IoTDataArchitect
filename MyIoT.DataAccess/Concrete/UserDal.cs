@@ -1,9 +1,4 @@
-﻿//System
-using System.Linq;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-
-//Project
+﻿//Project
 using MyIoT.Entities.Context;
 using MyIoT.DataAccess.Interfaces;
 using MyIoT.Core.DataAccess.EntityFramework;

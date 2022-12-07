@@ -1,12 +1,10 @@
 ﻿//System
 using Castle.DynamicProxy;
-using System.Transactions;
 
 //Projects
 using MyIoT.Core.Utilities.Intercepters;
 using MyIoT.Core.CrossCuttingConcerns.Logging;
 using MyIoT.Core.CrossCuttingConcerns.Logging.Log4Net;
-using Newtonsoft.Json.Linq;
 
 namespace MyIoT.Core.Aspects.Autofac.Logger;
 

@@ -1,9 +1,5 @@
 ﻿//System
-using System;
-using Microsoft.VisualBasic;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Authorization;
 
 //Projects

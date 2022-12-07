@@ -1,8 +1,4 @@
-﻿//System
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
-//Projects
+﻿//Projects
 using MyIoT.Core.Utilities.Result;
 using MyIoT.Core.Utilities.Security.UserEntity;
 

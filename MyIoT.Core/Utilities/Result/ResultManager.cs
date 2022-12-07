@@ -1,7 +1,4 @@
-﻿using System;
-using Microsoft.AspNetCore.Mvc;
-
-namespace MyIoT.Core.Utilities.Result;
+﻿namespace MyIoT.Core.Utilities.Result;
 
 public static class ResultManager
 {

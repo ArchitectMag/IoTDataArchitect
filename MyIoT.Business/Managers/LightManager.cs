@@ -1,8 +1,4 @@
 ﻿//System
-using System;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using Microsoft.Extensions.Localization;
 using Microsoft.AspNetCore.Authorization;
 
 //Projects

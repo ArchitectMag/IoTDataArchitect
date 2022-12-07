@@ -1,9 +1,4 @@
-﻿//System
-using System;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-
-//Projects
+﻿//Projects
 using MyIoT.Entities.Models;
 using MyIoT.Core.Utilities.Result;
 

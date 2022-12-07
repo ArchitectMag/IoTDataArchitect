@@ -1,7 +1,4 @@
-﻿//System
-using System;
-
-namespace MyIoT.Core.Utilities.Security.JWT;
+﻿namespace MyIoT.Core.Utilities.Security.JWT;
 
 public class AccessToken
 {

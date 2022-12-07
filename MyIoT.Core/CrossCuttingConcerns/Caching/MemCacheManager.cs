@@ -1,5 +1,4 @@
 ﻿//System
-using System;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using Microsoft.Extensions.Caching.Memory;

@@ -1,10 +1,4 @@
-﻿//System
-using System;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using Microsoft.Extensions.Localization;
-
-//Projects
+﻿//Projects
 using MyIoT.Entities.ViewModels;
 using MyIoT.Business.Interfaces;
 using MyIoT.Core.Utilities.Result;
